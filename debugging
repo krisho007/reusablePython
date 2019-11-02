@@ -1,0 +1,17 @@
+# Set breakpoint at a place
+import pdb; pdb.set_trace()
+
+#Inspect after failure
+import pdb; pdb.pm()
+
+#Navigating the debugger
+q - quit from the debugger
+s - step into
+n - next line
+c - Continue till next breakpoint
+r - Continue till the current function returns
+pp - evaluate an expression in current context and print its value ex: pp x+y
+w - print the stack trace. Begin to end
+
+l - show 11 code lines around the current line (also use ll)
+a - show argument list of current function
