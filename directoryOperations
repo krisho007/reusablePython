@@ -1,0 +1,4 @@
+import os
+
+# Number of files in a directory
+len([name for name in os.listdir('../input/image-preprocessing-edited') ])
