@@ -1,0 +1,18 @@
+
+from PIL import Image
+import pandas as pd
+
+df = pd.read_parquet('/kaggle/input/bengaliai-cv19/train_image_data_0.parquet')
+
+# All rows except the first column (t is file name)
+# 128 * 128 resize
+data = df.iloc[:, 1:].values.reshape(-1, 128, 128).astype(np.uint8)  
+
+# Get File Name - First column is File Name           
+name = df.iloc[idx,0] 
+img = image_resize(data[idx], dimention=32)
+new_image = Image.fromarray(img)
+new_image = new_image.convert('L')
+
+#Save in the current directory
+new_image.save(name + '.png')
