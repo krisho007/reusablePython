@@ -1,0 +1,7 @@
+# Save trained model
+torch.save(model.state_dict(), 'walmart.pth')
+
+# Load saved model
+model = WalmartModel()
+model.load_state_dict(torch.load('walmart.pth'))
+model.eval()
