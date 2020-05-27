@@ -1,0 +1,10 @@
+Five fold splits.
+
+Step 1. Add a new column with name 'kfold' to input data. Fill it with values 0, 1, 2, 3, 4
+      dfx['kfold'] = np.random.randint(0, 5, dfx.shape[0])
+      
+Step 2. While training, train like train(fold=1)
+
+Step 3. Within train method, get the train and validation set as below. dfx contains input + new 'kfold' column.
+    df_train = dfx[dfx.kfold != fold].reset_index(drop=True)
+    df_valid = dfx[dfx.kfold == fold].reset_index(drop=True)
