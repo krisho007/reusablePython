@@ -1,1 +1,5 @@
 
+!pip install pytorch_lightning
+
+import pytorch_lightning as pl
+from pytorch_lightning import Trainer
