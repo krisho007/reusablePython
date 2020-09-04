@@ -1,0 +1,11 @@
+import matplotlib.pyplot as plt
+
+samples = banana_df.sample(9)                                 //Source of Images to be displayed
+fig, ax = plt.subplots(nrows=3, ncols=3, figsize=(16, 16))    //3 rows, 3 columns
+count=0
+for row in ax:
+    for col in row:
+        col.imshow(plt.imread('../input/banana-count-and-weight-in-a-bunch/Banana_bunch_images/'+samples.iloc[count]['File Name']))
+        col.set_title(samples.iloc[count]['Banana Count'])
+        count += 1
+plt.show()
